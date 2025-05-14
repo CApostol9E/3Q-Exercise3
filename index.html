@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ICT9|Exercise3</title>
+</head>
+<body>
+	<form>
+		<label> Enter name: </label>
+		<input type="text" id="firstname">
+		<p id="greetings">Hello!</p>
+		<button type="button" onclick="greet(name)">GREET</button>
+	</form>
+<!-- ONTOGGLE EVENT -->
+<details ontoggle="alert('The ontoggle event just got triggered)">
+	<summary>
+		INSTRUCTIONS
+	</summary>
+	<p>
+		enter your variables
+	</p>
+</details>
+<button type="button" class="btn-btn-primary" oncliick="window.location.reload()" onmouseover="changeTextcolor()" onmouseout="changeTextcolor()">REFRESH</button>
+<!--Change Text and background color-->
+<script>
+	const reload = document.getElementById('refresh');
+	function changeTextcolor(){
+		reload.style.color = "red";
+		reload.style.background = "white";
+	}
+
+	function resetTextColor(){
+		reload.style.color = "white";
+		reload.style.background = "#337ab7";
+	}
+</script>
+<script>
+	document.getElementById("fname").onchange = function() {myName()};
+
+	function myName() {
+		var fname = document.getElementById("fname");
+		fname.value = fname.value.toUpperCase();
+	}
+</script>	
+	<script type="text/javascript">
+		function greet(name){ 
+			var name = document.getElementById('firstname').value; //id of input element
+			document.getElementById('greetings').innerHTML = 'Hello, ' + name;  //id of paragraph element
+		}
+	</script>
+</body>
+</html>
